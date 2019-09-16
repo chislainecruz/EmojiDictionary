@@ -105,7 +105,7 @@
         <!--Root View Controller-->
         <scene sceneID="gDo-ia-nIU">
             <objects>
-                <tableViewController id="9HX-rc-w0w" sceneMemberID="viewController">
+                <tableViewController id="9HX-rc-w0w" customClass="AddEditEmojiTableViewController" customModule="EmojiDictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="F8q-se-OM2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,6 +125,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="9HX-rc-w0w" eventType="editingChanged" id="Jq6-MR-wye"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -151,6 +154,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="9HX-rc-w0w" eventType="editingChanged" id="yp3-m5-WbT"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -177,6 +183,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="9HX-rc-w0w" eventType="editingChanged" id="UuI-aQ-xxe"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -203,6 +212,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="9HX-rc-w0w" eventType="editingChanged" id="TjJ-53-Klq"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -221,9 +233,28 @@
                             <outlet property="delegate" destination="9HX-rc-w0w" id="OeD-yP-o4T"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Nnz-XE-YI2"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Nnz-XE-YI2">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cn3-Fk-O9z">
+                            <connections>
+                                <segue destination="fID-NU-vRQ" kind="unwind" unwindAction="unwindToEmojiTableView:" id="sqd-aE-i9d"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BB8-Hi-7f4">
+                            <connections>
+                                <segue destination="fID-NU-vRQ" kind="unwind" identifier="saveUnwind" unwindAction="unwindToEmojiTableView:" id="QhD-RH-eXy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="2Ws-JB-g3E" id="6Wd-TH-jOQ"/>
+                        <outlet property="nameTextField" destination="hLS-7H-tBZ" id="39N-lo-wKJ"/>
+                        <outlet property="saveButton" destination="BB8-Hi-7f4" id="6SJ-bh-akk"/>
+                        <outlet property="symbolTextField" destination="inb-7y-EuQ" id="Aef-Ew-1Hd"/>
+                        <outlet property="usageTextField" destination="vLH-J7-c8V" id="m6x-qB-m9d"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P94-vT-i5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fID-NU-vRQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1692.753623188406" y="128.57142857142856"/>
         </scene>
