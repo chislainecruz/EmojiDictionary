@@ -26,7 +26,6 @@ class Emoji : Codable {
         let propertyListEncoder = PropertyListEncoder()
         let encodedEmoji = try? propertyListEncoder.encode(emojis)
         try? encodedEmoji?.write(to: ArchiveURL, options: .noFileProtection)
-        print("successfully saved")
     }
         
     static func loadFromFile() -> [Emoji]? {

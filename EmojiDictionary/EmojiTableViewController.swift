@@ -13,6 +13,8 @@ class EmojiTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.emojiVC = self
         navigationItem.leftBarButtonItem = editButtonItem
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
@@ -91,13 +93,13 @@ class EmojiTableTableViewController: UITableViewController {
         let movedEmoji = emojis.remove(at: fromIndexPath.row)
         emojis.insert(movedEmoji, at: to.row)
         tableView.reloadData()
-        Emoji.saveToFile(emojis: emojis)
+        //Emoji.saveToFile(emojis: emojis)
         
     }
     //adds the delete buttons when in edit more
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         
-        Emoji.saveToFile(emojis: emojis)
+        //Emoji.saveToFile(emojis: emojis)
         return .delete
         
     }
@@ -140,7 +142,7 @@ class EmojiTableTableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             
         }
-        Emoji.saveToFile(emojis: emojis)
+       // Emoji.saveToFile(emojis: emojis)
     }
  
     
