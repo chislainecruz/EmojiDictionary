@@ -21,6 +21,14 @@ class Emoji : Codable {
         self.usage = usage
     }
     
+    static var ArchiveURL: URL {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("emojis").appendingPathExtension("plist")
+        
+        return archiveURL
+    }
+
+    
     static func saveToFile(emojis: [Emoji]) {
        //use property list encoder to encode Emoji object. Save and write
         let propertyListEncoder = PropertyListEncoder()
@@ -37,13 +45,7 @@ class Emoji : Codable {
         }
         return nil
     }
-    
-    static var ArchiveURL: URL {
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("emojis").appendingPathExtension("plist")
-        
-        return archiveURL
-    }
+    // where to save
     
     static func loadSampleEmojis() -> [Emoji] {
         let sample : [Emoji] = [

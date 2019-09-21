@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
 //        let source = EmojiTableTableViewController()
 //        Emoji.saveToFile(emojis: source.emojis)
-        print("Entering Background")
         Emoji.saveToFile(emojis: emojiVC.emojis)
         
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
@@ -44,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        print("terminated")
         
  
     }

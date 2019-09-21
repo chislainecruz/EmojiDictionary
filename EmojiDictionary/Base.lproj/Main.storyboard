@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Emoji Dictionary-->
         <scene sceneID="wFs-zn-MpJ">
             <objects>
                 <tableViewController id="AQs-ap-UdT" customClass="EmojiTableTableViewController" customModule="EmojiDictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                             <outlet property="delegate" destination="AQs-ap-UdT" id="fdt-6V-47S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="FFS-ob-yBY">
+                    <navigationItem key="navigationItem" title="Emoji Dictionary" largeTitleDisplayMode="always" id="FFS-ob-yBY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mi4-Ei-oty">
                             <connections>
                                 <segue destination="Vcb-0y-bQF" kind="presentation" id="Vfb-aR-Lja"/>
@@ -102,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="-616" y="129"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Emoji Dictionary-->
         <scene sceneID="gDo-ia-nIU">
             <objects>
                 <tableViewController id="9HX-rc-w0w" customClass="AddEditEmojiTableViewController" customModule="EmojiDictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -233,7 +233,7 @@
                             <outlet property="delegate" destination="9HX-rc-w0w" id="OeD-yP-o4T"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Nnz-XE-YI2">
+                    <navigationItem key="navigationItem" title="Emoji Dictionary" largeTitleDisplayMode="always" id="Nnz-XE-YI2">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cn3-Fk-O9z">
                             <connections>
                                 <segue destination="fID-NU-vRQ" kind="unwind" unwindAction="unwindToEmojiTableView:" id="oKw-vH-fRN"/>
